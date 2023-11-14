@@ -31,7 +31,7 @@
         },
         "[project-root]/.nvmrc": "assets/default.nvmrc",
         "[project-root]/package.json": "assets/default.package.json",
-        "[project-root[/pantheon.yml": {
+        "[project-root]/pantheon.yml": {
           "mode" : "replace",
           "path" : "assets/default.pantheon.yml",
           "overwrite" : false
