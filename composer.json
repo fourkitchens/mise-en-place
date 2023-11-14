@@ -30,10 +30,10 @@
           "overwrite" : false
         },
         "[project-root]/.nvmrc": "assets/default.nvmrc",
-        "[project-root]/package.json": "assets/package.json",
+        "[project-root]/package.json": "assets/default.package.json",
         "[project-root[/pantheon.yml": {
           "mode" : "replace",
-          "path" : "assets/package.json",
+          "path" : "assets/default.pantheon.yml",
           "overwrite" : false
         },
         "[project-root]/.lando.yml": {
