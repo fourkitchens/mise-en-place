@@ -8,9 +8,6 @@
       "email": "michael.lutz@fourkitchens.com"
     }
   ],
-  "conflict": {
-    "fourkitchens/mise-en-place": "*"
-  },
   "require": {
     "drupal/core-composer-scaffold": "*",
     "fourkitchens/pots": "*"
