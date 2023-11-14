@@ -29,7 +29,6 @@
           "path" : "assets/default.gitignore",
           "overwrite" : false
         },
-        "[project-root]/scripts": "assets/scripts",
         "[project-root]/.nvmrc": "assets/default.nvmrc",
         "[project-root]/package.json": "assets/package.json",
         "[project-root[/pantheon.yml": {
