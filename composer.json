@@ -1,0 +1,51 @@
+{
+  "name": "fourkitchens/mis-en-place",
+  "description": "Composer package to aid in starting a D10 site.",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Michael Lutz",
+      "email": "michael.lutz@fourkitchens.com"
+    }
+  ],
+  "conflict": {
+    "fourkitchens/mise-en-place": "*"
+  },
+  "require": {
+    "drupal/core-composer-scaffold": "*",
+    "fourkitchens/pots": "*"
+
+  },
+  "require-dev": {
+    "symfony/console": "~6.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MiseEnPlace\\": "src"
+    }
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "file-mapping": {
+        "[project-root]/.gitignore": {
+          "mode" : "replace",
+          "path" : "assets/default.gitignore",
+          "overwrite" : false
+        },
+        "[project-root]/scripts": "assets/scripts",
+        "[project-root]/.nvmrc": "assets/default.nvmrc",
+        "[project-root]/package.json": "assets/package.json",
+        "[project-root[/pantheon.yml": {
+          "mode" : "replace",
+          "path" : "assets/package.json",
+          "overwrite" : false
+        },
+        "[project-root]/.lando.yml": {
+          "mode" : "replace",
+          "path" : "assets/default.lando.yml",
+          "overwrite" : false
+        }
+      }
+    }
+  }
+}

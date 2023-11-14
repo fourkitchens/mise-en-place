@@ -1,0 +1,41 @@
+name: aftstateweb
+recipe: pantheon
+config:
+  framework: drupal9
+  site: <SITENAME>
+  id: 03dbc640-9174-4923-b145-f0ac571837c7
+services:
+  appserver:
+    run:
+      - composer install
+    ssl: true
+    sslExpose: false
+proxy:
+  appserver:
+    - <SITENAME>.lndo.site
+    - '*.<SITENAME>.lndo.site'
+tooling:
+  drush:
+    service: appserver
+    cmd: /app/vendor/bin/drush --root=/app/web
+    env:
+      DRUSH_OPTIONS_URI: "https://<SITENAME>.lndo.site"
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for nginx.
+    cmd:
+      - docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
+      - echo "xdebug enabled"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for nginx.
+    cmd:
+      - rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+      - echo "xdebug disabled"
+    user: root
+  # See the main README.md about using custom `npm run` commands.
+  push: disabled
+  # See the main README.md about using custom `npm run` commands.
+  pull: disabled
+
