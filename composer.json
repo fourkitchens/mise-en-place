@@ -10,8 +10,10 @@
   ],
   "require": {
     "drupal/core-composer-scaffold": "*",
-    "fourkitchens/pots": "*"
-
+    "fourkitchens/pots": "*",
+    "pantheon-systems/drupal-integrations": "^10",
+    "cweagans/composer-patches": "^1.7",
+    "drush/drush": "^11 | ^12"
   },
   "require-dev": {
     "symfony/console": "~6.3.0"
@@ -19,6 +21,20 @@
   "autoload": {
     "psr-4": {
       "MiseEnPlace\\": "src"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": false,
+    "platform": {
+      "php": "8.2.0"
+    },
+    "allow-plugins": {
+      "composer/installers": true,
+      "cweagans/composer-patches": true,
+      "drupal/core-composer-scaffold": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true
     }
   },
   "extra": {
